@@ -63,31 +63,25 @@ const MasterCardLogo = styled.div`
 class CardDetails extends React.Component {
   state = {
     name: "",
-    card_number: "",
-    expiry_month: "",
-    expiry_year: "",
+    cardNumber: "",
+    expiryMonth: "",
+    expiryYear: "",
     cvv: "",
   };
 
-  handleClose = () => {
-    this.setState({ expiry_month_open: false });
-  };
-
-  handleOpen = () => {
-    this.setState({ expiry_month_open: true });
-  };
-
   handleChange = (event) => {
+    event.preventDefault();
+
     const input_name = event.target.name;
 
     if (input_name === "name") {
       this.setState({ name: event.target.value });
-    } else if (input_name === "card_number") {
-      this.setState({ card_number: event.target.value });
+    } else if (input_name === "cardNumber") {
+      this.setState({ cardNumber: event.target.value });
     } else if (input_name === "month") {
-      this.setState({ expiry_month: event.target.value });
+      this.setState({ expiryMonth: event.target.value });
     } else if (input_name === "year") {
-      this.setState({ expiry_year: event.target.value });
+      this.setState({ expiryYear: event.target.value });
     } else if (input_name === "cvv") {
       this.setState({ cvv: event.target.value });
     }
@@ -122,11 +116,11 @@ class CardDetails extends React.Component {
           id="standard-password-input"
           label="Card Number"
           style={{ margin: 8 }}
-          name="card_number"
+          name="cardNumber"
           type="password"
           onChange={this.handleChange}
           margin="normal"
-          value={this.state.card_number}
+          value={this.state.cardNumber}
           InputLabelProps={{
             shrink: true,
           }}
@@ -138,7 +132,7 @@ class CardDetails extends React.Component {
               <div style={{ marginTop: "15px" }}>
                 <select
                   className="select-field"
-                  value={this.state.expiry_month}
+                  value={this.state.expiryMonth}
                   onChange={this.handleChange}
                   name="month"
                 >
@@ -150,7 +144,7 @@ class CardDetails extends React.Component {
                 </select>
                 <select
                   className="select-field"
-                  value={this.state.expiry_year}
+                  value={this.state.expiryYear}
                   onChange={this.handleChange}
                   name="year"
                 >

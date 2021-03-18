@@ -47,15 +47,15 @@ const CardDetails = styled.div`
   justify-content: space-between;
 `;
 
-const CardType = ({ name, card_number, expiry_month, expiry_year }) => {
+const CardType = ({ name, cardNumber, expiryMonth, expiryYear }) => {
   return (
     <MainContainer>
       <CardContainer>
         <Logo></Logo>
-        <CardNo>{card_number}</CardNo>
+        <CardNo>{cardNumber}</CardNo>
         <CardDetails>
           <CardName>{name}</CardName>
-          {expiry_month && <Expiry>{`${expiry_month}/${expiry_year}`}</Expiry>}
+          {expiryMonth && <Expiry>{`${expiryMonth}/${expiryYear}`}</Expiry>}
         </CardDetails>
       </CardContainer>
     </MainContainer>
